@@ -2,6 +2,9 @@
 #include "controller/Controller.cpp"
 using namespace std;
 
+int process;
+int id;
+
 void displaySystem(){
 	
 	cout<<"\t\t************  Management System ************"<<endl;
@@ -35,7 +38,7 @@ void addStudent(){
 	student.setGpa(gpa);
 	
 	StudentController studentController;
-	int id =studentController.addStudent(student);
+    id =studentController.addStudent(student);
 	if(id != -1){
 	   cout<<"success added with id : "<<id<<endl;	
 	}
@@ -51,9 +54,14 @@ void addCourse(){
 	double hour;
 	cin>>hour;
 	course.setHour(hour); 
+	
 	CourseController courseController;
-
-	cout<<"success added with id : "<<courseController.addCourse(course)<<endl;
+	id=courseController.addCourse(course);
+	
+	if(id!=-1){
+		cout<<"success added with id : "<<id<<endl;
+	}
+	
 }
 void addTeacher(){
 	Teacher teacher;
@@ -76,9 +84,12 @@ void addTeacher(){
 	teacher.setSalary(salary);
 	
 	TeacherController teacherController;
-	cout<<"success added with id : "<<teacherController.addTeacher(teacher)<<endl;
+	id=teacherController.addTeacher(teacher);
+	if(id!=-1){
+		cout<<"success added with id : "<<id<<endl;
+	}
 }
-int process;
+
 int main(){
 	int flag=0;
 	while(true){
