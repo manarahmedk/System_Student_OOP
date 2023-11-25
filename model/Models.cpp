@@ -7,38 +7,37 @@ class ShareData {
 		int id;
 		string name;
 	public:
-		//setter
+		//  Setter
 		void setId(int id){
-			this->id=id;
+			this->id = id;
 		}
 		void setName(string name){
-			this->name=name;
+			this->name = name;
 		}
-		
-		//getter
+		// Getter
 		int getId(){
 			return id;
 		}
 		string getName(){
 			return name;
-		}	
+		}
+	
 };
-
-//Create Model BaseEntity
-class BaseEntity :public ShareData{
+// Create Model BaseEntity
+class BaseEntity: public ShareData {
 	private:
 		int age;
 		string phoneNumber;
 	public:
-		//setter
+		//  Setter
 		void setAge(int age){
-			this->age=age;
+			this->age = age;
 		}
 		void setPhoneNumber(string phoneNumber){
-			this->phoneNumber=phoneNumber;
+			this->phoneNumber = phoneNumber;
 		}
 		
-		//getter
+		// Getter
 		int getAge(){
 			return age;
 		}
@@ -46,80 +45,77 @@ class BaseEntity :public ShareData{
 			return phoneNumber;
 		}
 };
-
-//Create Model Teacher
-class Teacher: public BaseEntity{
+// Create Model Teacher
+class Teacher: public BaseEntity {
 	private:
 		double salary;
 		int studentIds[5];
 	public:
-		//setter
+		//  Setter
 		void setSalary(double salary){
-			this->salary=salary;
+			this->salary = salary;
 		}
 		void setStudentIds(int studentIds[5]){
-	    	for(int i=0;i<sizeof(studentIds)/sizeof(studentIds[0]);i++){
-			this->studentIds[i]=studentIds[i];
+			for(int i=0;i<sizeof(studentIds)/sizeof(studentIds[0]);i++){
+				this->studentIds[i] == studentIds[i];
 			}
-		}		
+		}
 		
-		//getter
+		// Getter
 		double getSalary(){
 			return salary;
 		}
 		int * getStudentIds(){
-	    	return studentIds;
+			return studentIds;	
 		}
 };
-
-//Create Model Course
-class Course :public ShareData{
+// Create Model Course
+class Course : public ShareData{
 	private:
 		double hour;
 		int studentIds[5];
 	public:
-		//setter
+		//  Setter
 		void setHour(double hour){
-			this->hour=hour;
+			this->hour = hour;
 		}
 		void setStudentIds(int studentIds[5]){
-	    	for(int i=0;i<sizeof(studentIds)/sizeof(studentIds[0]);i++){
-			this->studentIds[i]=studentIds[i];
+			for(int i=0;i<sizeof(studentIds)/sizeof(studentIds[0]);i++){
+				this->studentIds[i] == studentIds[i];
 			}
 		}
 		
-		//getter
+		// Getter
 		double getHour(){
 			return hour;
 		}
 		int * getStudentIds(){
-	    	return studentIds;
+			return studentIds;	
 		}
 };
-
-//Create Model Student
-class Student: public BaseEntity{
+// Create Model Student
+class Student: public BaseEntity {
 	private:
 		double gpa;
 		Teacher teachers[5];
 		Course courses[5];
 	public:
-		//setter
+		//  Setter
 		void setGpa(double gpa){
-			this->gpa=gpa;
+			this->gpa = gpa;
 		}
 		void setTeachers(Teacher teachers[5]){
-	    	for(int i=0;i<sizeof(teachers)/sizeof(teachers[0]);i++){
-			this->teachers[i]=teachers[i];
+			for(int i=0;i<sizeof(teachers)/sizeof(teachers[0]);i++){
+				this->teachers[i] = teachers[i];
 			}
 		}
 		void setCourses(Course courses[5]){
-	    	for(int i=0;i<sizeof(courses)/sizeof(courses[0]);i++){
-			this->courses[i]=courses[i];
+			for(int i=0;i<sizeof(courses)/sizeof(courses[0]);i++){
+				this->courses[i] = courses[i];
 			}
-		}		
+		}
 		
-		//getter
+		// Getter
 		double getGpa(){
 			return gpa;
 		}
@@ -131,6 +127,5 @@ class Student: public BaseEntity{
 			return courses;
 		}
 };
-
 
 
